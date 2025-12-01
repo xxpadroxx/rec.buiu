@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redações do ano</title>
+  <meta name="description" content="Portfólio com 15 produções das disciplinas de Língua Portuguesa e Redação - encerramento do ano letivo." />
+
+  <style>
+    /* ====== BASE ====== */
+    :root{
+      --bg:#f7f7f8;
+      --card:#ffffff;
+      --accent:#0057b8;
+      --muted:#666;
+      --glass: rgba(255,255,255,0.7);
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#111}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--accent);text-decoration:none}
+
+    /* ====== LAYOUT & SEMANTIC AREAS ====== */
+    header{background:linear-gradient(180deg, rgba(0,87,184,0.07), transparent);backdrop-filter: blur(4px);}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0}
+    .brand{display:flex;gap:0.75rem;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+
+    nav.desktop{display:flex;gap:1rem;align-items:center}
+    .hamburger{display:none;cursor:pointer;padding:0.5rem;border-radius:8px}
+
+    main{padding:1.2rem 0}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:1rem;align-items:center}
+    .hero h1{margin:0 0 0.5rem;font-size:1.8rem}
+    .hero p{margin:0;color:var(--muted)}
+
+    /* ====== GALLERY ====== */
+    .gallery{margin-top:1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    article.card{background:var(--card);border-radius:var(--radius);padding:0.75rem;box-shadow:0 6px 18px rgba(22,22,22,0.05);display:flex;flex-direction:column}
+    .card .meta{font-size:0.85rem;color:var(--muted);margin-top:0.5rem}
+    .card h3{margin:0.5rem 0 0.25rem;font-size:1.05rem}
+    .card p{margin:0;font-size:0.95rem;color:#222}
+
+    /* ====== SLIDESHOW (Momentos do Ano) ====== */
+    #slideshow{margin-top:1.5rem}
+    .slideshow-wrap{position:relative;background:linear-gradient(90deg, rgba(0,87,184,0.03), transparent);border-radius:var(--radius);overflow:hidden}
+    .slides{display:flex;transition:transform .5s ease}
+    .slide{min-width:100%;display:flex;align-items:center;justify-content:center;padding:1rem}
+    .slide figcaption{position:absolute;left:1rem;bottom:1rem;background:var(--glass);padding:0.5rem 0.75rem;border-radius:8px}
+    .slide-controls{position:absolute;right:1rem;bottom:1rem;display:flex;gap:0.5rem}
+    .dot{width:10px;height:10px;border-radius:50%;background:#ddd}
+    .dot.active{background:var(--accent)}
+
+    /* ====== FOOTER ====== */
+    footer{padding:1rem 0;color:var(--muted);text-align:center;border-top:1px solid rgba(0,0,0,0.03)}
+
+    /* ====== SIDEBAR / INFO ====== */
+    .sidebar{background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(22,22,22,0.04)}
+    .meta-list{display:flex;flex-direction:column;gap:0.5rem}
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      nav.desktop{display:none}
+      .hamburger{display:block}
+      .gallery{grid-template-columns:1fr}
+      .hero{gap:0.5rem}
+    }
+
+    /* ====== ACCESSIBILITY FOCUS ====== */
+    a:focus, button:focus{outline:3px solid rgba(0,87,184,0.2);outline-offset:3px}
+
+    /* ====== FORM ====== */
+    form{display:flex;flex-direction:column;gap:0.5rem}
+    input,textarea{padding:0.6rem;border-radius:8px;border:1px solid #ddd}
+    button.primary{background:var(--accent);color:white;padding:0.6rem 0.9rem;border-radius:8px;border:none;cursor:pointer}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">PT</div>
+        <div>
+          <strong>Redações do ano</strong>
+          <div style="font-size:.85rem;color:var(--muted)">Língua Portuguesa & Redação</div>
+        </div>
+      </div>
+
+      <nav class="desktop" role="navigation" aria-label="Menu principal">
+        <a href="#home">Início</a>
+        <a href="#producoes">Produções</a>
+        <a href="#slideshow">Momentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button class="hamburger" id="btn-hamburger" aria-expanded="false" aria-controls="mobile-menu" title="Abrir menu">
+        ☰
+      </button>
+    </div>
+
+    <div id="mobile-menu" style="display:none;padding:0 1rem 1rem;">
+      <nav aria-label="Menu mobile">
+        <a href="#home">Início</a> • <a href="#producoes">Produções</a> • <a href="#slideshow">Momentos</a> • <a href="#contato">Contato</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <main class="container" id="home" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Portfólio — 15 Produções</h1>
+        <p>Seleção de produções realizadas nas disciplinas de Língua Portuguesa e Redação, focadas no tema final do ano letivo: retrospectiva, agradecimentos e mensagens.</p>
+
+        <div style="margin-top:1rem;display:flex;gap:0.75rem;align-items:center">
+          <div class="sidebar" style="flex:1;">
+            <div class="meta-list">
+              <div><strong>Professora:</strong> Simone</div>
+              <div><strong>Disciplina:</strong> Língua Portuguesa</div>
+              <div><strong>Turma:</strong> 3º Ano D</div>
+            </div>
+          </div>
+
+          <div style="width:220px;display:flex;flex-direction:column;gap:.5rem;align-items:flex-start">
+            <div style="font-size:.95rem;color:var(--muted)">Contador de produções:</div>
+            <div id="counter" style="font-weight:700;font-size:1.5rem">15</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar" aria-labelledby="sobre-title">
+        <h3 id="sobre-title">Sobre o Projeto</h3>
+        <p style="margin:0;color:var(--muted)">Projeto de encerramento do ano com 15 trabalhos — redações e crônica</p>
+      </aside>
+    </section>
+
+    <!-- =============================== -->
+    <!-- PRODUÇÕES / GALERIA: 15 ITENS -->
+    <!-- =============================== -->
+    <section id="producoes" aria-labelledby="producoes-title">
+      <h2 id="producoes-title" style="margin-top:1.25rem">Produções</h2>
+      <div class="gallery" role="list">
+
+        <!-- 15 artigos/produções: cada um em <article> com imagem e descrição -->
+        <!-- Use imagens otimizadas e alt text -->
+
+        <!-- Item 1 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/ffd1dc/000000?text=Produção+1" alt="Capa da produção 1 - Redação sobre memórias" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 1</figcaption>
+          </figure>
+          <h3>Busca por procedimentos estéticos é cada vez maior entre os jovens</h3>
+          <p class="meta">Gênero: REDAÇÃO - DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>Eles revelam como nunca o desejo de mudar a imagem — o que pode resvalar para exageros e frustração
+
+Por Duda Monteiro de Barros
+Atualizado em 4 jun 2024, 12h02 - Publicado em 24 set 2022, 08h
+
+O afã humano de alterar a própria imagem projetada no espelho vem se pronunciando com cada vez mais intensidade conforme os bisturis se tornam espécies de varinhas capazes de operar grandes transformações. Os primeiros registros de procedimentos estéticos datam do século VI, na região onde hoje se localiza a Índia, com propósito muito distinto do atual: retirava-se pele da testa para reconstruir narizes impiedosamente mutilados como condenação de crimes. Já a cirurgia plástica moderna é um advento pós-I Guerra Mundial, quando a medicina entrou em ação para reconstruir o rosto de soldados feridos. Sua função embelezadora ingressou em cena para valer na Hollywood de 1940 — documentos sugerem que até a estonteante Marilyn Monroe teria recorrido a intervenções para maximizar suas qualidades naturais. Pois o mundo girou, o cardápio de técnicas se ampliou, o preço baixou — e não deu outra: uma corrida aos consultórios, encabeçada por brasileiros, seguidos de americanos e mexicanos.
+
+O que vem perturbando especialistas nos dias de hoje é a faixa etária — em franco declínio — dos que buscam tais mudanças. De acordo com um recente estudo da empresa de análise de mercado HSR, que capta tendências de comportamento, 80% das pessoas entre 18 e 25 anos desejam realizar algum procedimento estético — de uma mexidinha leve a clássicas cirurgias. É consideravelmente mais gente do que depois dos 40 anos, quando 60% manifestam essa aspiração, e após os 60, etapa em que 40% gostariam de alterar características físicas com a ajuda da ciência.
+
+O motor para o desejo de mudar tão precocemente traços do semblante ou do corpo tem conexão direta com a baixa autoestima, que atormenta 25% dessa jovem população, como aponta a pesquisa. Numa fase de formação de valores e consolidação da personalidade, é esperado que inseguranças se façam presentes. O que chama atenção aí são os desdobramentos desse sentimento, que tem causado tanta insatisfação em relação à própria imagem quando se dá os primeiros passos na vida adulta. “Tradicionalmente, os mais velhos eram os grandes interessados nos ajustes estéticos. Isso se inverteu”, pontua o médico Marcus Vinicius Mafra, membro da Sociedade Brasileira de Cirurgia Plástica (SBCP).</p>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/cfe3ff/000000?text=Produção+2" alt="Capa da produção 2 - Poema da turma" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 11</figcaption>
+          </figure>
+          <h3>A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA PARA OS JOVENS</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>A educação financeira é um instrumento essencial para preparar os jovens diante dos desafios da vida adulta. Em uma sociedade marcada pelo consumo imediato e pela facilidade de acesso ao crédito, compreender conceitos como orçamento, poupança e investimento torna-se indispensável para evitar endividamentos e garantir estabilidade econômica.
+
+Ao aprender desde cedo a administrar recursos, os jovens desenvolvem autonomia e responsabilidade, tornando-se capazes de planejar metas de curto e longo prazo. Além disso, a educação financeira contribui para a formação de cidadãos conscientes, que entendem o valor do dinheiro e fazem escolhas mais equilibradas, evitando gastos impulsivos.
+
+Outro aspecto relevante é o impacto coletivo: jovens financeiramente educados tendem a construir uma sociedade mais sustentável, com menor desigualdade e maior capacidade de inovação. Nesse sentido, escolas e famílias desempenham papel fundamental ao incentivar práticas como controle de despesas, uso responsável de cartões e valorização da poupança.
+
+Portanto, investir na educação financeira dos jovens é investir no futuro. Essa prática não apenas previne dificuldades econômicas, mas também fortalece a cidadania e abre caminhos para uma vida mais organizada e próspera.</p>
+        </article>
+
+        <!-- Items 3 a 15: replicar com variações -->
+        <!-- Item 3 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/fff2cc/000000?text=Produção+3" alt="Capa da produção 3 - Crônica" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 2</figcaption>
+          </figure>
+          <h3>Os tipos de acessibilidade para incluir pessoas com deficiência</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>Quando falamos de acessibilidade, é provável que uma rampa seja a primeira imagem que surja à mente. Isso porque a acessibilidade arquitetônica e o símbolo do cadeirante como pessoa com deficiência física são amplamente divulgados.
+
+Mas e quanto às outras deficiências e tipos de acessibilidade? As pessoas com deficiência ainda enfrentam muitas outras barreiras, nem sempre evidentes, que podem e devem ser eliminadas.
+
+Considerado o “pai da inclusão no Brasil” por sua militância em prol das pautas sobre deficiência, o pesquisador e escritor Romeu Kazumi Sassaki dividiu a acessibilidade em seis grupos: arquitetônica, atitudinal, metodológica, comunicacional, instrumental e programática. Com mais visibilidade, aumento de estudos sobre o tema e os avanços tecnológicos, também podem ser consideradas duas novas categorias: natural e digital.
+
+Confira abaixo mais informações sobre cada uma delas:
+
+Acessibilidade arquitetônica
+
+Diz respeito a toda infraestrutura dos ambientes, seja em residências, espaços públicos ou privados. São as rampas, elevadores, banheiros adaptados, pisos táteis, calçadas rebaixadas etc., e são regulamentados pela Associação Brasileira de Normas Técnicas (ABNT).
+
+Acessibilidade atitudinal
+
+Trata do relacionamento sem preconceitos com pessoas com deficiência. A ideia do capacitismo, discriminação ou o conceito de normalidade é desconstruída, aceitando a diversidade humana como premissa de uma sociedade inclusiva.</p>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/d6ffd6/000000?text=Produção+4" alt="Capa 4 - Resenha literária" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 12</figcaption>
+          </figure>
+          <h3>DESAFIOS PARA A VALORIZAÇÃO DA CULTURA POPULAR BRASILEIRA</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>A cultura popular brasileira é marcada pela diversidade, fruto da mistura de tradições indígenas, africanas e europeias. Manifestações como o samba, o maracatu, o bumba-meu-boi e as festas juninas revelam a riqueza cultural do país. No entanto, a valorização dessas expressões enfrenta inúmeros desafios.
+
+Um dos principais obstáculos é a falta de reconhecimento institucional. Muitas manifestações culturais não recebem apoio suficiente de políticas públicas, o que dificulta sua preservação e transmissão às novas gerações. Além disso, a globalização e a influência de culturas estrangeiras contribuem para a desvalorização de práticas locais, que acabam sendo vistas como secundárias ou ultrapassadas.
+
+Outro desafio é a desigualdade regional: enquanto algumas tradições são amplamente divulgadas, outras permanecem invisíveis, restritas a comunidades específicas. A ausência de investimentos em educação cultural também limita o acesso da população ao conhecimento sobre suas próprias raízes.
+
+Portanto, valorizar a cultura popular brasileira exige ações integradas, como incentivo à pesquisa, apoio financeiro a grupos culturais e promoção de eventos que fortaleçam a identidade nacional. Somente assim será possível preservar esse patrimônio imaterial e garantir que ele continue a inspirar e unir gerações.</p>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/e6e6ff/000000?text=Produção+5" alt="Capa 5 - Cartaz informativo" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 13</figcaption>
+          </figure>
+          <h3>CAMINHOS PARA A UNIVERSALIZAÇÃO DO SANEAMENTO BÁSICO NO BRASIL</h3>
+          <p class="meta">Gênero: DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>O saneamento básico é um direito fundamental e um dos pilares para garantir saúde e qualidade de vida à população. No Brasil, entretanto, milhões de pessoas ainda vivem sem acesso a água tratada e coleta de esgoto, o que evidencia a necessidade de políticas eficazes para a universalização desse serviço.
+
+Entre os principais caminhos para alcançar esse objetivo está o investimento em infraestrutura, especialmente em regiões periféricas e rurais, onde a carência é maior. A ampliação de parcerias público-privadas pode acelerar obras e garantir maior eficiência na gestão dos recursos. Além disso, é essencial fortalecer a fiscalização e a transparência na aplicação dos investimentos, evitando desperdícios e corrupção.
+
+Outro aspecto relevante é a educação ambiental, que contribui para o uso consciente da água e para a preservação dos recursos naturais. Programas de conscientização podem estimular a população a valorizar o saneamento como parte da saúde coletiva.
+
+Portanto, a universalização do saneamento básico no Brasil depende de planejamento estratégico, investimentos contínuos e participação social. Somente com ações integradas será possível reduzir desigualdades, prevenir doenças e promover dignidade para todos os cidadãos.</p>
+        </article>
+
+        <!-- Item 6 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/ffe8cc/000000?text=Produção+6" alt="Capa 6 - Texto de opinião" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 14</figcaption>
+          </figure>
+          <h3>Opinião: Ser Estudante</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>O esporte é uma das mais poderosas ferramentas de transformação social, capaz de promover inclusão, disciplina e cidadania. Mais do que uma prática física, ele representa um espaço de convivência que aproxima pessoas de diferentes origens, reduz desigualdades e fortalece valores coletivos.
+
+Em comunidades vulneráveis, projetos esportivos oferecem alternativas ao ócio e à violência, estimulando jovens a desenvolverem habilidades, autoestima e perspectivas de futuro. Além disso, o esporte contribui para a saúde física e mental, prevenindo doenças e promovendo bem-estar. Outro aspecto relevante é sua capacidade de formar líderes e incentivar o trabalho em equipe, competências essenciais para a vida em sociedade.
+
+O impacto do esporte também se estende ao campo educacional e profissional. Programas que integram atividades esportivas ao ensino favorecem o rendimento escolar e ampliam oportunidades de inserção no mercado de trabalho. Ao mesmo tempo, grandes eventos esportivos reforçam o sentimento de identidade nacional e valorizam a diversidade cultural.
+
+Portanto, investir no esporte significa investir em transformação social. Com políticas públicas adequadas e apoio comunitário, essa prática pode se consolidar como um caminho para inclusão, desenvolvimento e construção de uma sociedade mais justa e solidária.</p>
+        </article>
+
+        <!-- Item 7 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/ffdede/000000?text=Produção+7" alt="Capa 7 - Entrevista" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 3</figcaption>
+          </figure>
+          <h3>PRINCIPAIS FATORES QUE INFLUENCIAM NA QUALIDADE DE VIDA E NO BEM-ESTAR DA POPULAÇÃO</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>A qualidade de vida e o bem-estar da população são influenciados por diversos fatores que se interligam e moldam o cotidiano das pessoas. Entre os principais, destacam-se a saúde, a educação, o trabalho e o ambiente social. O acesso a serviços de saúde eficientes garante prevenção e tratamento de doenças, enquanto a educação amplia oportunidades e promove consciência crítica.
+
+O trabalho digno, com remuneração justa e condições adequadas, contribui para a estabilidade financeira e emocional. Além disso, o convívio social saudável, marcado por relações de respeito e solidariedade, fortalece o sentimento de pertencimento e reduz a exclusão. O ambiente físico também exerce papel fundamental: cidades com infraestrutura adequada, transporte eficiente, áreas verdes e segurança favorecem o equilíbrio entre corpo e mente.
+
+Outro aspecto relevante é o acesso à cultura e ao lazer, que proporcionam momentos de prazer e enriquecimento pessoal. A soma desses elementos resulta em uma vida mais equilibrada, na qual o indivíduo sente-se valorizado e capaz de desenvolver seu potencial. Portanto, investir em políticas públicas que promovam saúde, educação, trabalho e ambiente sustentável é essencial para elevar a qualidade de vida e o bem-estar coletivo.</p>
+        </article>
+
+        <!-- Item 8 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/dbeeff/000000?text=Produção+8" alt="Capa 8 - Relato de viagem escolar" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 4</figcaption>
+          </figure>
+          <h3>AS MUDANÇAS CLIMÁTICAS NO BRASIL E SEUS DESAFIOS</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>As mudanças climáticas representam um dos maiores desafios contemporâneos para o Brasil, país marcado por vasta biodiversidade e forte dependência de recursos naturais. O aumento da temperatura média, a irregularidade das chuvas e a intensificação de eventos extremos, como enchentes e secas prolongadas, afetam diretamente a agricultura, a saúde pública e a infraestrutura urbana.
+
+A Amazônia, considerada essencial para o equilíbrio climático global, sofre com o desmatamento e as queimadas, que ampliam a emissão de gases de efeito estufa e reduzem a capacidade de absorção de carbono. Além disso, regiões como o semiárido nordestino enfrentam maior vulnerabilidade, com impactos na produção de alimentos e no abastecimento de água.
+
+Entre os principais desafios estão a necessidade de políticas públicas eficazes, o investimento em energias renováveis e a preservação dos biomas nacionais. A urbanização desordenada também exige atenção, pois aumenta os riscos de enchentes e deslizamentos em áreas periféricas.
+
+Portanto, enfrentar as mudanças climáticas no Brasil requer ação integrada entre governo, sociedade e setor privado. Somente com planejamento sustentável e conscientização coletiva será possível garantir qualidade de vida e proteger as futuras gerações.</p>
+        </article>
+
+        <!-- Item 9 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/fff1f0/000000?text=Produção+9" alt="Capa 9 - Pôster cultural" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 5</figcaption>
+          </figure>
+          <h3>AS CONSEQUÊNCIAS DO DESCARTE DE LIXO ELETRÔNICO</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>O avanço tecnológico trouxe inúmeros benefícios à sociedade, mas também gerou um problema crescente: o descarte inadequado de lixo eletrônico. Computadores, celulares, televisores e outros dispositivos, quando descartados sem tratamento adequado, liberam substâncias tóxicas como chumbo, mercúrio e cádmio, que contaminam o solo, a água e o ar. Esses poluentes representam riscos graves à saúde humana, podendo causar doenças neurológicas, respiratórias e até câncer.
+
+Além dos impactos ambientais e sanitários, o lixo eletrônico contribui para a degradação de ecossistemas e ameaça a biodiversidade. Animais e plantas sofrem com a contaminação, o que compromete o equilíbrio natural. Outro aspecto relevante é o desperdício de recursos: muitos equipamentos possuem metais valiosos, como ouro e cobre, que poderiam ser reaproveitados por meio da reciclagem.
+
+O Brasil enfrenta desafios significativos nesse campo, pois ainda há pouca conscientização da população e insuficiência de políticas públicas eficazes para coleta e tratamento. Portanto, é essencial investir em educação ambiental, ampliar programas de logística reversa e incentivar práticas sustentáveis. Somente assim será possível reduzir os danos causados pelo descarte inadequado e transformar o lixo eletrônico em oportunidade de preservação e desenvolvimento.</p>
+        </article>
+
+        <!-- Item 10 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/e8fff2/000000?text=Produção+10" alt="Capa 10 - Peça teatral" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 6</figcaption>
+          </figure>
+          <h3>O CONSUMO DE ULTRAPROCESSADOS E SUAS CONSEQUÊNCIAS À SAÚDE</h3>
+          <p class="meta">Gênero: DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>O consumo de alimentos ultraprocessados tem se tornado cada vez mais comum na sociedade contemporânea, impulsionado pela praticidade, pelo baixo custo e pela forte publicidade. No entanto, esse hábito alimentar traz sérias consequências à saúde da população.
+
+Esses produtos, como refrigerantes, biscoitos recheados, fast food e embutidos, são ricos em açúcares, gorduras saturadas, sódio e aditivos químicos, mas pobres em nutrientes essenciais. O consumo frequente está associado ao aumento de doenças crônicas não transmissíveis, como obesidade, hipertensão, diabetes tipo 2 e problemas cardiovasculares. Além disso, estudos apontam que dietas baseadas em ultraprocessados podem comprometer o sistema imunológico e favorecer processos inflamatórios no organismo.
+
+Outro impacto relevante é o efeito psicológico: a alta palatabilidade e a presença de substâncias que estimulam o prazer imediato podem gerar compulsão alimentar, dificultando escolhas saudáveis. Esse cenário exige políticas públicas eficazes, como campanhas de conscientização, regulação da publicidade e incentivo ao consumo de alimentos naturais e minimamente processados.
+
+Portanto, reduzir a presença de ultraprocessados na dieta é fundamental para garantir qualidade de vida e prevenir doenças. A valorização da alimentação equilibrada e da educação nutricional é o caminho para uma sociedade mais saudável..</p>
+        </article>
+
+        <!-- Item 11 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/fff7d6/000000?text=Produção+11" alt="Capa 11 - Texto informativo" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 7</figcaption>
+          </figure>
+          <h3>FATORES E EFEITOS DA DEPENDÊNCIA EM JOGOS DE APOSTAS NA WEB</h3>
+          <p class="meta"> DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>A popularização dos jogos de apostas na web trouxe consigo um fenômeno preocupante: a dependência digital. Entre os principais fatores que contribuem para esse quadro estão a facilidade de acesso, a promessa de ganhos rápidos e a intensa publicidade direcionada. A possibilidade de jogar a qualquer hora, sem sair de casa, aumenta a vulnerabilidade de indivíduos que buscam entretenimento ou solução imediata para dificuldades financeiras.
+
+Os efeitos dessa dependência são múltiplos e afetam tanto o indivíduo quanto a sociedade. No âmbito pessoal, destacam-se problemas emocionais, como ansiedade e depressão, além de prejuízos financeiros que podem levar ao endividamento e à exclusão social. A compulsão por apostar compromete relações familiares e profissionais, gerando isolamento e perda de produtividade.
+
+Do ponto de vista coletivo, a dependência em jogos online sobrecarrega sistemas de saúde e assistência social, exigindo políticas públicas voltadas à prevenção e ao tratamento. A educação digital e campanhas de conscientização são fundamentais para alertar sobre os riscos e promover o uso responsável da tecnologia.
+
+Portanto, compreender os fatores e efeitos da dependência em jogos de apostas na web é essencial para construir estratégias que protejam o bem-estar individual e coletivo.</p>
+        </article>
+
+        <!-- Item 12 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/ffd9b3/000000?text=Produção+12" alt="Capa 12 - Texto colaborativo" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 8</figcaption>
+          </figure>
+          <h3>A IMPORTÂNCIA DO TRABALHO VOLUNTÁRIO NO COMBATE ÀS DESIGUALDADES SOCIAIS</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>O trabalho voluntário é uma prática fundamental para a construção de uma sociedade mais justa e solidária. Em um país marcado por profundas desigualdades sociais, como o Brasil, a atuação de voluntários contribui para reduzir carências em áreas como educação, saúde, cultura e assistência social.
+
+A importância dessa atividade está no impacto direto que gera na vida de pessoas em situação de vulnerabilidade. Ações simples, como oferecer aulas de reforço, participar de campanhas de arrecadação ou apoiar projetos comunitários, ampliam oportunidades e promovem inclusão. Além disso, o voluntariado fortalece valores de empatia e cidadania, estimulando a responsabilidade coletiva diante dos problemas sociais.
+
+Outro aspecto relevante é que o trabalho voluntário complementa políticas públicas, alcançando locais e grupos que muitas vezes não recebem atenção adequada do Estado. Ao mesmo tempo, cria redes de solidariedade e engajamento que potencializam transformações sociais.
+
+Portanto, o voluntariado é uma ferramenta poderosa no combate às desigualdades, pois promove não apenas auxílio imediato, mas também esperança e dignidade. Incentivar essa prática significa investir em uma sociedade mais equilibrada, participativa e humana.</p>
+        </article>
+
+        <!-- Item 13 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/e6f7ff/000000?text=Produção+13" alt="Capa 13 - Banda sonora" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 9</figcaption>
+          </figure>
+          <h3>ADULTIZAÇÃO INFANTIL – CONSEQUÊNCIAS DA PERDA IRREPARÁVEL DA INFÂNCIA</h3>
+          <p class="meta">Gênero: DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>A adultização infantil é um fenômeno cada vez mais presente na sociedade contemporânea, marcado pela antecipação de comportamentos, responsabilidades e padrões estéticos próprios da vida adulta em crianças. Esse processo ocorre, em grande parte, devido à influência da mídia, das redes sociais e da pressão cultural por desempenho e aparência.
+
+As consequências da perda da infância são profundas e irreparáveis. Crianças expostas precocemente a padrões adultos podem desenvolver problemas emocionais, como ansiedade e baixa autoestima, além de dificuldades na construção de sua identidade. A ausência de vivências próprias da infância, como o brincar e a socialização espontânea, compromete o desenvolvimento cognitivo e afetivo.
+
+Outro impacto relevante é a fragilidade nas relações familiares, já que muitas vezes os pais, ao incentivar comportamentos adultos, deixam de valorizar o tempo de amadurecimento natural dos filhos. A adultização também pode gerar vulnerabilidade social, expondo crianças a riscos como exploração e violência.
+
+Portanto, preservar a infância é essencial para garantir um desenvolvimento saudável e equilibrado. É papel da família, da escola e da sociedade proteger esse período único, assegurando que cada criança viva plenamente sua fase de descobertas e aprendizados.</p>
+        </article>
+
+        <!-- Item 14 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/f2e6ff/000000?text=Produção+14" alt="Capa 14 - Criação multimídia" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">Redação: 10</figcaption>
+          </figure>
+          <h3>CAMINHOS PARA COMBATER O ETARISMO NAS RELAÇÕES SOCIAIS</h3>
+          <p class="meta">Gênero:  DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>O etarismo, caracterizado pela discriminação baseada na idade, é um problema que afeta tanto jovens quanto idosos, comprometendo a convivência social e a valorização das diferentes fases da vida. Essa prática reforça estereótipos, limita oportunidades e gera exclusão, especialmente no mercado de trabalho e nas relações interpessoais.
+
+Para combater o etarismo, é necessário investir em educação e conscientização. Campanhas informativas podem desconstruir preconceitos e mostrar que cada faixa etária possui potencialidades únicas. Além disso, o incentivo ao diálogo intergeracional fortalece vínculos e promove respeito mútuo, permitindo que experiências e saberes sejam compartilhados.
+
+Outro caminho importante é a criação de políticas públicas que assegurem igualdade de oportunidades, especialmente para idosos, garantindo acesso a emprego, saúde e lazer. No ambiente corporativo, programas de diversidade e inclusão podem valorizar profissionais de diferentes idades, combatendo a ideia de que apenas os jovens são produtivos.</p>
+        </article>
+
+        <!-- Item 15 -->
+        <article class="card" role="listitem" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/800x450/fff0f5/000000?text=Produção+15" alt="Capa 15 - Agradecimentos" loading="lazy">
+            <figcaption style="font-size:.85rem;color:var(--muted);margin-top:0.5rem">cronica</figcaption>
+          </figure>
+          <h3>O dia a dia dos estudantes</h3>
+          <p class="meta">Gênero: DISSERTATIVO-ARGUMENTATIVO</p>
+          <p>O despertador toca cedo, e o estudante, ainda meio sonolento, trava a primeira batalha do dia: levantar ou pedir “só mais cinco minutos”. Entre o café apressado e a mochila esquecida no canto do quarto, começa a corrida contra o tempo.
+
+Na sala de aula, o cenário é sempre o mesmo: alguns atentos, outros distraídos, e aquele colega que parece ter resposta para tudo. O professor fala, o quadro se enche de fórmulas ou datas, e os celulares piscam discretamente, tentando disputar atenção.
+
+O intervalo é o momento mais esperado. Risadas ecoam pelos corredores, histórias são trocadas, e o lanche vira combustível para enfrentar a segunda metade da jornada. Entre provas, trabalhos e apresentações, surgem também pequenas vitórias: uma nota melhor que a esperada, um elogio inesperado, ou simplesmente a sensação de ter entendido finalmente aquele conteúdo complicado.
+
+Ao fim do dia, resta o cansaço misturado com esperança. O estudante volta para casa carregando livros, sonhos e, muitas vezes, dúvidas. Mas é nesse vai e vem diário que se constrói não apenas conhecimento, mas também amizades, experiências e lembranças que ficarão para sempre.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SLIDESHOW SECTION -->
+    <section id="slideshow" aria-labelledby="slideshow-title">
+      <h2 id="slideshow-title">Momentos do Ano</h2>
+      <div class="slideshow-wrap" style="margin-top:0.75rem;">
+        <div class="slides" id="slides">
+          <figure class="slide" role="group" aria-roledescription="slide">
+            <img src="https://via.placeholder.com/1200x400/ffd1dc/000000?text=Evento+1" alt="Foto do evento 1 - Feira Cultural">
+            <figcaption>Feira Cultural: exposição de trabalhos.</figcaption>
+          </figure>
+
+          <figure class="slide" role="group" aria-roledescription="slide">
+            <img src="https://via.placeholder.com/1200x400/cfe3ff/000000?text=Evento+2" alt="Foto do evento 2 - Apresentação teatral">
+            <figcaption>Apresentação teatral dos alunos.</figcaption>
+          </figure>
+
+          <figure class="slide" role="group" aria-roledescription="slide">
+            <img src="https://via.placeholder.com/1200x400/d6ffd6/000000?text=Evento+3" alt="Foto do evento 3 - Viagem de estudos">
+            <figcaption>Viagem de estudos: memórias em imagens.</figcaption>
+          </figure>
+        </div>
+
+        <div class="slide-controls" aria-hidden="false">
+          <div id="dots" style="display:flex;gap:0.5rem"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FEEDBACK -->
+    <section id="contato" aria-labelledby="contato-title" style="margin-top:1.25rem;display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:start">
+      <div>
+        <h2 id="contato-title">Contato / Enviar Feedback</h2>
+        <form id="contact-form" novalidate>
+          <label for="name">Nome</label>
+          <input id="name" name="name" type="text" placeholder="Seu nome" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="4" placeholder="Escreva uma mensagem" required></textarea>
+
+          <div style="display:flex;gap:.5rem;align-items:center">
+            <button type="submit" class="primary">Enviar</button>
+            <div id="form-status" aria-live="polite" style="color:var(--muted)"></div>
+          </div>
+        </form>
+      </div>
+
+      <aside class="sidebar">
+        <h3>Instruções de Entrega</h3>
+        <p style="margin:0;color:var(--muted)">Cada produção deve estar salva em PDF e linkada (ou enviada) para o professor. Use o formulário para dúvidas.</p>
+      </aside>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <small>© <span id="year"></span> Escola Exemplo — Projeto: Encerramento do Ano Letivo — 15 produções.</small>
+    </div>
+  </footer>
+
+  <script>
+    // ====== JS: Menu hamburguer ======
+    (function(){
+      const btn = document.getElementById('btn-hamburger');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', ()=>{
+        const opened = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!opened));
+        if(opened){ menu.style.display = 'none'; } else { menu.style.display = 'block'; }
+      })
+    })();
+
+    // ====== JS: Simple slideshow with dots & keyboard control ======
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = Array.from(slidesEl.children);
+      const dotsWrap = document.getElementById('dots');
+      let index = 0;
+
+      function renderDots(){
+        dotsWrap.innerHTML = '';
+        slides.forEach((s,i)=>{
+          const d = document.createElement('button');
+          d.className = 'dot' + (i===index? ' active':'');
+          d.setAttribute('aria-label', 'Ir para slide ' + (i+1));
+          d.addEventListener('click', ()=>{ goTo(i); });
+          dotsWrap.appendChild(d);
+        });
+      }
+
+      function goTo(i){ index = (i+slides.length)%slides.length; update(); }
+      function update(){
+        slidesEl.style.transform = `translateX(-${index*100}%)`;
+        document.querySelectorAll('.dot').forEach((d,idx)=>{
+          d.classList.toggle('active', idx===index);
+        });
+      }
+
+      // keyboard control
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') goTo(index+1);
+        if(e.key === 'ArrowLeft') goTo(index-1);
+      });
+
+      // auto rotate
+      let timer = setInterval(()=> goTo(index+1), 5000);
+      // pause on hover
+      slidesEl.parentElement.addEventListener('mouseenter', ()=> clearInterval(timer));
+      slidesEl.parentElement.addEventListener('mouseleave', ()=> timer = setInterval(()=> goTo(index+1), 5000));
+
+      renderDots(); update();
+    })();
+
+    // ====== JS: Form validation (client-side) ======
+    (function(){
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        if(!name || !email || !message){
+          status.textContent = 'Por favor, preencha todos os campos.';
+          return;
+        }
+        // Simple email check
+        if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+          status.textContent = 'Email inválido.'; return;
+        }
+        status.textContent = 'Mensagem enviada (simulada). Obrigado!';
+        form.reset();
+      });
+    })();
+
+    // ====== Misc: year & counter ======
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('counter').textContent = document.querySelectorAll('.gallery > article').length;
+
+  </script>
+</body>
+</html>
